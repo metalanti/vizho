@@ -1,0 +1,20 @@
+{
+  "name": "vizho",
+  "version": "1.0.0",
+  "description": "vizho",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "jquery": "^3.2.1",
+    "jsdom": "^11.0.0",
+    "lodash": "^4.17.4",
+    "lowdb": "^0.16.2",
+    "serve-favicon": "^2.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    
+  },
+  "author": "anti",
+  "license": "ISC"
+}
