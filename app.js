@@ -11,7 +11,7 @@ db.defaults({
 
 app.use('/public', express.static('public'));
 app.use('/vendor', express.static('bower_components'));
-//app.use(favicon(__dirname + '/public/favicon/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon/favicon.ico'));
 
 app.get('/refresh', function(req, res) {
 	var url = 'http://www.vizugy.hu/?mapModule=OpGrafikon&AllomasVOA=164962B8-97AB-11D4-BB62-00508BA24287&mapData=Idosor';
