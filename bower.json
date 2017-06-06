@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
-    "highcharts": "^5.0.12"
+    "highcharts": "^5.0.12",
+    "moment": "^2.18.1"
   }
 }
