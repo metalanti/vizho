@@ -15,6 +15,10 @@
   "scripts": {
     
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metalanti/vizho.git"
+  },
   "author": "anti",
   "license": "ISC"
 }
