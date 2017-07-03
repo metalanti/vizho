@@ -7,13 +7,30 @@ $(function() {
 	});
 
 	$.getJSON('/data', function(resp) {
-		if (resp && resp.length > 0) {
-			var utolso = resp[resp.length - 1];
+		data = resp || [];
+		if (data.length > 0) {
+			var utolso = data[data.length - 1];
 			$('#utolso').html('<small>' + moment(utolso.date).format('YYYY-MM-DD HH:mm') + '</small> ' + utolso.temp + ' °C');
 		}
-		data = resp.map(function(r) {
-			return [r.date, r.temp];
+		var elozo;
+		for (var i in data) {
+			if (elozo && (elozo.date + 3600000) < data[i].date) {
+				for (var d = elozo.date; d < data[i].date; d += 3600000) {
+					data.push({
+						date: d,
+						temp: null
+					});
+				}
+			}
+			elozo = data[i];
+		}
+		data.sort(function(a, b) {
+			return a.date - b.date;
 		});
+		data = data.map(function(d) {
+			return [d.date, d.temp];
+		});
+
 		Highcharts.stockChart('chart', {
 
 			title: {
@@ -23,8 +40,10 @@ $(function() {
 			series: [{
 				name: 'Pécsi tó',
 				data: data,
+				pointInterval: 3600000,
 				tooltip: {
-					valueDecimals: 1
+					valueDecimals: 1,
+					valueSuffix: '°C'
 				}
 			}]
 		});
