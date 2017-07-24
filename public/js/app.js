@@ -37,6 +37,33 @@ $(function() {
 				text: 'Pécsi tó °C'
 			},
 
+			rangeSelector: {
+				buttons: [{
+					type: 'day',
+					count: 1,
+					text: '1d'
+				}, {
+					type: 'day',
+					count: 3,
+					text: '3d'
+				}, {
+					type: 'week',
+					count: 1,
+					text: '1w'
+				}, {
+					type: 'week',
+					count: 2,
+					text: '2w'
+				}, {
+					type: 'month',
+					count: 1,
+					text: '1m'
+				}, {
+					type: 'all',
+					text: 'All'
+				}]
+			},
+
 			series: [{
 				name: 'Pécsi tó',
 				data: data,
