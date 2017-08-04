@@ -64,6 +64,15 @@ $(function() {
 				}]
 			},
 
+			plotOptions: {
+				series: {
+					marker: {
+						enabled: true,
+						radius: 1
+					}
+				}
+			},
+
 			series: [{
 				name: 'Pécsi tó',
 				data: data,
